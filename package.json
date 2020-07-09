@@ -1,0 +1,44 @@
+{
+  "name": "@s-is-for-store/scripts",
+  "version": "0.0.1-alpah.0",
+  "description": "Scripts for better development when using S is for Store",
+  "main": "lib/index.js",
+  "bin": "lib/index.js",
+  "author": "Grant Heath",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc && chmod +x ./lib/index.js",
+    "prepublish": "npm run build",
+    "test": "npx ./lib/index.js test-project",
+    "posttest": "rm -r test-project"
+  },
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/",
+    "src/",
+    "template_files/"
+  ],
+  "keywords": [],
+  "devDependencies": {
+    "@types/figlet": "^1.2.0",
+    "@types/fs-extra": "^9.0.1",
+    "@types/handlebars": "^4.1.0",
+    "@types/jest": "^26.0.3",
+    "@types/yargs": "^15.0.5",
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-typescript": "^8.0.2",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "typescript": "^3.9.6"
+  },
+  "dependencies": {
+    "figlet": "^1.4.0",
+    "fs-extra": "^9.0.1",
+    "handlebars": "^4.7.6",
+    "ora": "^4.0.4",
+    "yargs": "^15.4.0"
+  }
+}
