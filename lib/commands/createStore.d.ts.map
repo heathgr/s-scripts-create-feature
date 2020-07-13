@@ -1,0 +1,1 @@
+{"version":3,"file":"createStore.d.ts","sourceRoot":"","sources":["../../src/commands/createStore.ts"],"names":[],"mappings":"AAMA,eAAO,MAAM,UAAU,QAAa,OAAO,CAAC,IAAI,CAQ/C,CAAA;AAED,UAAU,YAAY;IACpB,CAAC,GAAG,EAAE,MAAM,GAAG,MAAM,CAAC;CACvB;AAED,eAAO,MAAM,gBAAgB,aAAc,MAAM,QAAQ,YAAY,KAAG,MAIvE,CAAA;+BAE2B,MAAM,KAAG,OAAO,CAAC,IAAI,CAAC;AAAlD,wBAkBC"}

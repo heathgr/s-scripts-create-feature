@@ -1,5 +1,5 @@
 {
-  "name": "@s-is-for-store/scripts",
+  "name": "s-scripts",
   "version": "0.0.1-alpah.0",
   "description": "Scripts for better development when using S is for Store",
   "main": "lib/index.js",
@@ -24,7 +24,7 @@
     "@types/figlet": "^1.2.0",
     "@types/fs-extra": "^9.0.1",
     "@types/handlebars": "^4.1.0",
-    "@types/jest": "^26.0.3",
+    "@types/jest": "^26.0.4",
     "@types/yargs": "^15.0.5",
     "@typescript-eslint/eslint-plugin": "^3.6.0",
     "eslint": "^7.4.0",
