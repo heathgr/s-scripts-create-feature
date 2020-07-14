@@ -14,28 +14,66 @@ export const ensureRoot = async (): Promise<void> => {
   }
 }
 
+export const readTemplateFiles = (
+  templatePath: string,
+  templateFiles: string[],
+): Promise<string[]> => Promise.all(
+  templateFiles.map((templateFile) => {
+    const targetPath = join(__dirname, '../../template_files/', templatePath, templateFile)
+
+    return readFile(targetPath, 'utf8')
+  }),
+)
+
 interface TemplateData {
   [key: string]: string,
 }
 
-export const evaluateTemplate = (template: string, data: TemplateData): string => {
-  const renderer = handlebars.compile(template)
+export const evaluateTemplates = (templates: string[], data: TemplateData): string[] => {
+  handlebars.registerHelper('toInterfaceName', (str: string) => `${str[0].toUpperCase()}${str.substring(1)}State`)
 
-  return renderer(data)
+  return templates.map((template) => {
+    const renderer = handlebars.compile(template)
+
+    return renderer(data)
+  })
 }
+
+export const writeTemplates = (
+  projectPath: string,
+  files: string[],
+  data: string[],
+): Promise<void[]> => Promise.all(
+  files.map(async (file, i) => {
+    const target = join(process.cwd(), projectPath, file)
+
+    await ensureFile(target)
+    await writeFile(target, data[i])
+  }),
+)
 
 export default async (name: string): Promise<void> => {
   console.log('Creating store: ', __dirname)
   try {
     await ensureRoot()
 
-    const storeTemplatePath = join(__dirname, '../../template_files/store.ts')
-    const storeTemplate = await readFile(storeTemplatePath, 'utf8')
-    const evaluatedTemplated = evaluateTemplate(storeTemplate, { name })
-    const targetDirectory = join(process.cwd(), `/src/stores/${name}.ts`)
+    const storeTemplates = await readTemplateFiles(
+      'store',
+      [
+        'store.ts',
+        'store.test.ts',
+      ],
+    )
+    const evaluatedTemplates = evaluateTemplates(storeTemplates, { name })
 
-    await ensureFile(targetDirectory)
-    await writeFile(targetDirectory, evaluatedTemplated, 'utf8')
+    await writeTemplates(
+      'src/stores',
+      [
+        `${name}.ts`,
+        `${name}.test.ts`,
+      ],
+      evaluatedTemplates,
+    )
   } catch (e) {
     console.log(e.message)
     process.exit(1)
