@@ -2,15 +2,20 @@
 import yargs from 'yargs'
 import createStore from './commands/createStore'
 
-export default yargs.command(
-  'store',
-  'Create a new store.',
-  (args) => args.demandCommand(1),
-  (argsv) => {
-    const storeName = argsv._[1]
+export default yargs
+  .command(
+    'create-store',
+    'Create a new store.',
+    (args) => {
+      args.demandCommand(1)
+      args.strict(false)
+    },
+    (argsv) => {
+      const storeName = argsv._[1]
 
-    createStore(storeName)
-  },
-)
+      createStore(storeName)
+    },
+  )
   .demandCommand(1)
+  .strict()
   .argv
