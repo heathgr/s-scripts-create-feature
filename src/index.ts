@@ -16,6 +16,7 @@ export default yargs
       createStore(storeName)
     },
   )
+  .completion()
   .demandCommand(1)
   .strict()
   .argv
