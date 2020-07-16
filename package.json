@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "start": "tsc -w",
     "build": "tsc && chmod +x ./lib/index.js",
     "prepublish": "npm run build",
     "test": "npx ./lib/index.js test-project",
