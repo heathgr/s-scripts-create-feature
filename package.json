@@ -24,8 +24,8 @@
     "@types/figlet": "^1.2.0",
     "@types/fs-extra": "^9.0.1",
     "@types/handlebars": "^4.1.0",
+    "@types/inquirer": "^6.5.0",
     "@types/jest": "^26.0.4",
-    "@types/yargs": "^15.0.5",
     "@typescript-eslint/eslint-plugin": "^3.6.0",
     "eslint": "^7.4.0",
     "eslint-config-airbnb-typescript": "^8.0.2",
@@ -38,7 +38,7 @@
     "figlet": "^1.4.0",
     "fs-extra": "^9.0.1",
     "handlebars": "^4.7.6",
-    "ora": "^4.0.4",
-    "yargs": "^15.4.0"
+    "inquirer": "^7.3.2",
+    "ora": "^4.0.4"
   }
 }

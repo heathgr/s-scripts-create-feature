@@ -6,6 +6,7 @@ import writeTemplates from './writeTemplates'
 import getTemplateFilePaths from './getTemplateFilePaths'
 import getTargetPaths from './getTargetPaths'
 
+// TODO create enum for types
 const renderTemplates = async (name: string, type: string): Promise<void> => {
   try {
     await ensureRoot()

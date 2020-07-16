@@ -1,7 +1,2 @@
-declare const _default: {
-    [x: string]: unknown;
-    _: string[];
-    $0: string;
-};
-export default _default;
+export {};
 //# sourceMappingURL=index.d.ts.map

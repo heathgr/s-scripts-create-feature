@@ -1,22 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import yargs from 'yargs'
-import createStore from './commands/createStore'
+import start from './commands/start'
 
-export default yargs
-  .command(
-    'create-store',
-    'Create a new store.',
-    (args) => {
-      args.demandCommand(1)
-      args.strict(false)
-    },
-    (argsv) => {
-      const storeName = argsv._[1]
-
-      createStore(storeName)
-    },
-  )
-  .completion()
-  .demandCommand(1)
-  .strict()
-  .argv
+start()

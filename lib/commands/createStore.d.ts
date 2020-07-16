@@ -1,3 +1,3 @@
-declare const _default: (name: string) => Promise<void>;
-export default _default;
+declare const createStore: () => Promise<void>;
+export default createStore;
 //# sourceMappingURL=createStore.d.ts.map
