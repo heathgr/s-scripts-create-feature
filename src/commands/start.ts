@@ -1,6 +1,7 @@
 import inquirer from 'inquirer'
 
 import createStore from './createStore'
+import createUpdaters from './createUpdaters'
 
 enum StartChoices {
   CREATE_STORE = 'Create Store',
@@ -12,7 +13,7 @@ enum StartChoices {
 const start = async (): Promise<void> => {
   const result = await inquirer.prompt([
     {
-      name: 'start',
+      name: 'action',
       type: 'rawlist',
       message: 'Choose an action to perform: ',
       choices: [
@@ -24,9 +25,13 @@ const start = async (): Promise<void> => {
     },
   ])
 
-  switch (result.start) {
+  switch (result.action) {
     case StartChoices.CREATE_STORE: {
       createStore()
+      return
+    }
+    case StartChoices.CREATE_UPDATER: {
+      createUpdaters()
       return
     }
     default: {

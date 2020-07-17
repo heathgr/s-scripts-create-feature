@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import inquirer from 'inquirer'
 
-import renderTemplates from './templateRendering/renderTemplates'
+import renderTemplates from '../templateCreation/renderTemplates'
 
 const createStore = async (): Promise<void> => {
   // TODO create a validation function
@@ -9,11 +9,14 @@ const createStore = async (): Promise<void> => {
     {
       name: 'name',
       type: 'input',
-      message: 'Choose the name for your store: ',
+      message: 'Enter the feature name for your store: ',
     },
   ])
 
-  await renderTemplates(result.name, 'stores')
+  const featureName = result.name as string
+  const storeName = `${featureName}Store`
+
+  await renderTemplates(storeName, 'stores')
 }
 
 export default createStore
