@@ -5,9 +5,10 @@ import readTemplateFiles from './readTemplateFiles'
 import writeTemplates from './writeTemplates'
 import getTemplateFilePaths from './getTemplateFilePaths'
 import getTargetPaths from './getTargetPaths'
+import { TemplateType } from './types'
 
 // TODO create enum for types
-const processTemplates = async (name: string, type: string, data = {}): Promise<void> => {
+const processTemplates = async (name: string, type: TemplateType, data = {}): Promise<void> => {
   try {
     await ensureRoot()
 
@@ -28,7 +29,10 @@ const processTemplates = async (name: string, type: string, data = {}): Promise<
     )
   } catch (e) {
     // TODO better error output
+    console.log('oh no something broke!!!')
     console.log(e.message)
+    console.log('--------')
+    console.log(e)
     process.exit(1)
   }
 }

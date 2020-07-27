@@ -1,5 +1,5 @@
 import { Store } from 's-is-for-store'
-import store, { initialState } from './{{ name }}'
+import store, { {{toInitialStateName name}} } from './{{ toStoreName name }}'
 
 describe('{{ name }}', () => {
   it('Should create a store.', () => {
@@ -7,6 +7,6 @@ describe('{{ name }}', () => {
   })
 
   it('Should have the correct initial state.', () => {
-    expect(store.current()).toEqual(initialState)
+    expect(store.current()).toEqual({{toInitialStateName name}})
   })
 })

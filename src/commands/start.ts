@@ -2,6 +2,7 @@ import inquirer from 'inquirer'
 
 import createStore from './createStore'
 import createUpdaters from './createUpdaters'
+import createComponent from './createComponent'
 
 enum StartChoices {
   CREATE_STORE = 'Create Store',
@@ -32,6 +33,10 @@ const start = async (): Promise<void> => {
     }
     case StartChoices.CREATE_UPDATER: {
       createUpdaters()
+      return
+    }
+    case StartChoices.CREATE_COMPONENT: {
+      createComponent()
       return
     }
     default: {

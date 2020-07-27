@@ -1,1 +1,1 @@
-{"version":3,"file":"getTargetPaths.d.ts","sourceRoot":"","sources":["../../src/templateCreation/getTargetPaths.ts"],"names":[],"mappings":"AAEA,QAAA,MAAM,cAAc,sBACC,MAAM,EAAE,QACrB,MAAM,QACN,MAAM,KACX,MAAM,EAMP,CAAA;AAEF,eAAe,cAAc,CAAA"}
+{"version":3,"file":"getTargetPaths.d.ts","sourceRoot":"","sources":["../../src/templateCreation/getTargetPaths.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,YAAY,EAAE,MAAM,SAAS,CAAA;AA0BtC,QAAA,MAAM,cAAc,sBACC,MAAM,EAAE,QACrB,MAAM,QACN,YAAY,KACjB,MAAM,EAKP,CAAA;AAEF,eAAe,cAAc,CAAA"}

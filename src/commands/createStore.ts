@@ -2,6 +2,7 @@
 import inquirer from 'inquirer'
 
 import processTemplates from '../templateCreation/processTemplates'
+import { TemplateType } from '../templateCreation/types'
 
 const createStore = async (): Promise<void> => {
   // TODO create a validation function
@@ -13,10 +14,7 @@ const createStore = async (): Promise<void> => {
     },
   ])
 
-  const featureName = result.name as string
-  const storeName = `${featureName}Store`
-
-  await processTemplates(storeName, 'stores')
+  await processTemplates(result.name, TemplateType.STORE)
 }
 
 export default createStore

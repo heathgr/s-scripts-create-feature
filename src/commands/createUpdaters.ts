@@ -1,14 +1,11 @@
 import inquirer from 'inquirer'
 
-import { readdir } from 'fs-extra'
-import { join } from 'path'
 import processTemplates from '../templateCreation/processTemplates'
+import getStoreNames from '../helpers/getStoreNames'
+import { TemplateType } from '../templateCreation/types'
 
 const createUpdaters = async (): Promise<void> => {
-  const stores = await readdir(join(process.cwd(), './src/stores'))
-  const storeNames = stores
-    .filter((store) => !/\.test\.ts$/.test(store))
-    .map((store) => store.replace(/.ts$/, ''))
+  const storeNames = await getStoreNames()
 
   const result = await inquirer.prompt(
     [
@@ -26,14 +23,18 @@ const createUpdaters = async (): Promise<void> => {
     ],
   )
 
-  const resultStore = result.store as string
-  const updaterName = resultStore.replace(/Store$/, 'Updater')
+  const storeName = result.store as string
+  const featureName = storeName.replace(/Store/, '')
   const resultNames = result.names as string
   const functionNames = resultNames
     .split(/[, ]/)
     .filter((x) => x !== '')
 
-  await processTemplates(updaterName, 'updaters', { functionNames, storeName: resultStore })
+  await processTemplates(
+    featureName,
+    TemplateType.UPDATER,
+    { functionNames },
+  )
 }
 
 export default createUpdaters

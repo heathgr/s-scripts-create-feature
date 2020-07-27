@@ -1,13 +1,13 @@
 import { createStore } from 's-is-for-store'
 
-export interface {{ toInterfaceName name }} {
+export interface {{toInterfaceName name}} {
   // add interface properties
 }
 
-export const initialState: {{ toInterfaceName name }} = {
+export const initial{{toCapitalized name}}State: {{toInterfaceName name}} = {
   // set values for initial state
 }
 
-const {{ name }} = createStore(initialState)
+const {{toStoreName name}} = createStore(initial{{toCapitalized name}}State)
 
-export default {{ name }}
+export default {{toStoreName name}}

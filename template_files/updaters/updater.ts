@@ -1,8 +1,8 @@
-import store from '../store/{{storeName}}'
+import {{toStoreName name}} from '../stores/{{toStoreName name}}'
 {{#each functionNames}}
 {{#if @index}}{{/if}}
-export const {{this}} = (value: /* define value type */): void => {
-  store.update({
+export const {{this}} = (): void => {
+  {{toStoreName ../name}}.update({
     // implement update
   })
 }
