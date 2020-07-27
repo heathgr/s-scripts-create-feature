@@ -1,6 +1,6 @@
 {
   "name": "@s-scripts/create-feature",
-  "version": "0.0.1-alpah.0",
+  "version": "0.0.1-alpah.1",
   "description": "Scripts for creating code scafolding when using S is for Store",
   "main": "lib/index.js",
   "bin": "lib/index.js",
