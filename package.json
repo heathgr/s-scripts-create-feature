@@ -1,7 +1,7 @@
 {
-  "name": "s-scripts",
+  "name": "@s-scripts/create-feature",
   "version": "0.0.1-alpah.0",
-  "description": "Scripts for better development when using S is for Store",
+  "description": "Scripts for creating code scafolding when using S is for Store",
   "main": "lib/index.js",
   "bin": "lib/index.js",
   "author": "Grant Heath",
