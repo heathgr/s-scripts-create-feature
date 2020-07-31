@@ -15,7 +15,6 @@ describe('{{toUpdaterName name}}', () => {
   xit('Should update state when {{this}} is called.', () => {
     const expected = {
       // implement expected state
-
     }
 
     {{this}}()
