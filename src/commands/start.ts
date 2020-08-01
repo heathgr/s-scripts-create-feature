@@ -28,21 +28,23 @@ const start = async (): Promise<void> => {
 
   switch (result.action) {
     case StartChoices.CREATE_STORE: {
-      createStore()
-      return
+      await createStore()
+      break
     }
     case StartChoices.CREATE_UPDATER: {
-      createUpdaters()
-      return
+      await createUpdaters()
+      break
     }
     case StartChoices.CREATE_COMPONENT: {
-      createComponent()
-      return
+      await createComponent()
+      break
     }
     default: {
       process.exit(0)
     }
   }
+
+  await start()
 }
 
 export default start
